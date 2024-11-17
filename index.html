@@ -3,102 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lovella Villamor Example Form</title>
+    <title> Lovella Villamor sample form </title>
     <style>
-        /* General Styling */
+        /* General Styles */
         body {
-            font-family: Arial, sans-serif;
-            background-color: #d1eaf0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
             margin: 0;
             padding: 0;
+            color: #fff;
         }
 
         .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding-top: 100px;
             text-align: center;
-            margin-top: 50px;
         }
 
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        /* Form Styles */
         form {
-            display: inline-block;
-            text-align: left;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: rgba(255, 255, 255, 0.85);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        form:hover {
+            transform: translateY(-10px);
         }
 
         form div {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
         form label {
+            font-size: 1rem;
             display: block;
             margin-bottom: 5px;
+            color: #333;
         }
 
         form input, form textarea {
             width: 100%;
-            padding: 8px;
-            box-sizing: border-box;
-            border: 1px solid #ccc;
-            border-radius: 4px;
+            padding: 12px;
+            border-radius: 6px;
+            border: 1px solid #ddd;
+            background-color: #f7f7f7;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        form input:focus, form textarea:focus {
+            border-color: #2575fc;
+            outline: none;
         }
 
         form button {
-            background-color: #61a5c2;
-            color: white;
-            padding: 10px 20px;
+            background-color: #2575fc;
+            color: #fff;
+            padding: 12px 25px;
             border: none;
-            border-radius: 4px;
+            border-radius: 8px;
+            font-size: 1rem;
             cursor: pointer;
+            transition: background-color 0.3s;
         }
 
         form button:hover {
-            background-color: #add8e6;
+            background-color: #6a11cb;
         }
 
-        .results {
-            margin-top: 50px;
+        /* Hover Animation for Buttons */
+        .hover-btn {
+            display: inline-block;
+            text-decoration: none;
+            margin-top: 20px;
         }
 
-        table {
-            margin: 0 auto;
-            border-collapse: collapse;
-            width: 80%;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        .hover-btn:hover button {
+            background-color: #6a11cb;
         }
 
-        table th, table td {
-            border: 1px solid #ddd;
-            padding: 8px;
-        }
-
-        table th {
-            background-color: #f2f2f2;
+        /* Mobile Friendly */
+        @media (max-width: 600px) {
+            form {
+                padding: 20px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Sample Form</h1>
-        <p>Please fill out the form below:</p>
-        <form id="surveyForm" action="https://www.youtube.com/watch?v=dQw4w9WgXcQ" method="get">
+        <h1>Fill Out Our Interactive Form</h1>
+        <p>We'd love to hear from you! Please share your details below:</p>
+        <form id="surveyForm">
             <div>
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required placeholder="Enter your full name">
             </div>
             <div>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required placeholder="Your email address">
             </div>
             <div>
                 <label for="age">Age:</label>
-                <input type="number" id="age" name="age" required>
+                <input type="number" id="age" name="age" required min="18" placeholder="How old are you?">
             </div>
             <div>
                 <label for="feedback">Feedback:</label>
-                <textarea id="feedback" name="feedback" rows="4" required></textarea>
+                <textarea id="feedback" name="feedback" rows="6" required placeholder="Share your feedback..."></textarea>
             </div>
-            <div style="text-align: center;">
-                <
+            <div class="hover-btn">
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" style="display: inline-block;">
+                    <button type="button">Submit & Explore</button>
+                </a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
